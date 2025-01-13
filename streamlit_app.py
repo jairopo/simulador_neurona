@@ -38,7 +38,8 @@ col_b_f[1].markdown("<h3>Función de activación</h3>", unsafe_allow_html=True)
 f = col_b_f[1].selectbox("Elige la función de activación", ["Sigmoide", "ReLu", "Tangente hiperbólica"])
 
 # Crea una instancia de la clase Neuron y calcula el resultado
-n1 = Neuron(weights=w, bias=b, func=f)
-y = n1.run(x)
-print(f"La salida de la neurona es {y}")
+if st.button("Calcular la salida"):
+    n1 = Neuron(weights=w, bias=b, func=f)
+    y = n1.run(x)
+    st.write(f"La salida de la neurona es {y}")
 
