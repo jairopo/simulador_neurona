@@ -15,13 +15,13 @@ class Neuron:
         if len(self.__x) == len(self.w):
             # Get the y value
             y = sum([self.__x[i] * self.w[i] for i in range(len(self.__x))]) + self.b
-            
+
             # Check the function to run
             if self.f == "ReLu":
-                return f"ReLu: {max(0, y)}"
+                return max(0, y)
             elif self.f == "Tangente hiperbólica":
-                return f"Tanh: {np.tanh(y)}"
+                return np.tanh(y)
             elif self.f == "Sigmoide":
-                return f"Sigmoid: {1 / (1 + np.exp(-y))}"
+                return 1 / (1 + np.exp(-y))
                 
         
