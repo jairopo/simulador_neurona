@@ -9,23 +9,27 @@ st.header("Simulador de neurona")
 # Establece el número de entradas y pesos
 num = st.slider("Elige el número de entradas/pesos que tendrá la neurona", 1, 10)
 
-# Crea tantas columnas, pesos y entradas como entradas/pesos se hayan seleccionado
+# Crea tantas columnas como pesos se hayan seleccionado
 st.header("Pesos")
-col_x_w = st.columns(num)
+col_w = st.columns(num)
 w = np.zeros(num)
+
+# Muestra los pesos a introducir y el array resultante
+for i in range(num):
+    col_w[i].markdown(f"w<sub>{i}</sub>", unsafe_allow_html=True)
+    w[i] = col_w[i].number_input("", 0.0)
+st.write(f"w = {w}")
+
+# Crea tantas columnas como entradas se hayan seleccionado
+st.header("Entradas")
+col_x = st.columns(num)
 x = np.zeros(num)
 
 # Muestra los pesos a introducir y el array resultante
 for i in range(num):
-    col_x_w[i].markdown(f"w<sub>{i}</sub>", unsafe_allow_html=True)
-    w[i] = col_x_w[i].number_input("", 0.0)
+    col_w[i].markdown(f"w<sub>{i}</sub>", unsafe_allow_html=True)
+    w[i] = col_w[i].number_input("", 0.0)
 st.write(f"w = {w}")
-
-# Muestra las entradas a introducir y el array resultante
-st.header("Entradas")
-for i in range(num):
-    x[i] = col_x_w[i].number_input(f"x<sub>{i}</sub>", 0.0, unsafe_allow_html=True)
-st.write(f"x = {x}")
 
 col_b_f = st.columns(2)
 col_b_f[0].header("Sesgo")
