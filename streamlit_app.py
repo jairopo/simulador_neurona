@@ -41,4 +41,3 @@ if st.button("Calcular la salida"):
     n1 = Neuron(weights=w, bias=b, func=f)
     y = n1.run(x)
     st.write(f"La salida de la neurona es {y}")
-
