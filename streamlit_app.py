@@ -25,11 +25,11 @@ st.header("Entradas")
 col_x = st.columns(num)
 x = np.zeros(num)
 
-# Muestra los pesos a introducir y el array resultante
+# Muestra las entradas a introducir y el array resultante
 for i in range(num):
-    col_w[i].markdown(f"w<sub>{i}</sub>", unsafe_allow_html=True)
-    w[i] = col_w[i].number_input("", 0.0)
-st.write(f"w = {w}")
+    col_x[i].markdown(f"x<sub>{i}</sub>", unsafe_allow_html=True)
+    x[i] = col_x[i].number_input("", 0.0)
+st.write(f"x = {x}")
 
 col_b_f = st.columns(2)
 col_b_f[0].header("Sesgo")
