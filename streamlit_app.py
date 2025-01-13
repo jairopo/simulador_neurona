@@ -18,10 +18,10 @@ w = np.zeros(num)
 for i in range(num):
     col_w[i].markdown(f"w<sub>{i}</sub>", unsafe_allow_html=True)
     w[i] = col_w[i].number_input("", 0.0, key=f"w{i}")
-st.write(f"w = {w}")
+st.write(f"w = {str(w)}")
 
 # Crea tantas columnas como entradas se hayan seleccionado
-st.markdown("<h3>Entradas></h3>", unsafe_allow_html=True)
+st.markdown("<h3>Entradas</h3>", unsafe_allow_html=True)
 col_x = st.columns(num)
 x = np.zeros(num)
 
@@ -29,7 +29,7 @@ x = np.zeros(num)
 for i in range(num):
     col_x[i].markdown(f"x<sub>{i}</sub>", unsafe_allow_html=True)
     x[i] = col_x[i].number_input("", 0.0, key=f"x{i}")
-st.write(f"x = {x}")
+st.write(f"x = {str(x)}")
 
 col_b_f = st.columns(2)
 col_b_f[0].markdown("<h3>Sesgo</h3>", unsafe_allow_html=True)
