@@ -7,4 +7,4 @@ A través de una interfaz gráfica, el usuario puede modificar el peso, las entr
 
 
 ## Enlace a Streamlit
-https://holaneurona-jairo.streamlit.app/
+https://simulador-neurona.streamlit.app/
